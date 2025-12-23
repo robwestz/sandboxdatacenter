@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(NUL)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(docker --version:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(pip install:*)",
+      "Bash(python test_neural_db.py:*)",
+      "Bash(python demo_integration.py:*)",
+      "Bash(python app.py:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\Users\\robin\\Downloads\\THE_DATAZENtr'' -File | Sort-Object LastWriteTime -Descending | Select-Object -First 10 | Format-Table Name, LastWriteTime -AutoSize\")",
+      "Bash(copy:*)",
+      "Bash(powershell:*)",
+      "Bash(python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

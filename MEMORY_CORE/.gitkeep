@@ -1,0 +1,2 @@
+# This file ensures the directory structure is preserved in Git
+# Even though .db and checkpoint files are ignored, we want to keep the directories

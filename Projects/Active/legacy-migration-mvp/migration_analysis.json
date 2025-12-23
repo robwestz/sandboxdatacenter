@@ -1,0 +1,96 @@
+{
+  "timestamp": "2025-12-21T04:12:27.226037",
+  "analysis": {
+    "project": "demo_legacy_project",
+    "total_files": 2,
+    "total_lines": 25,
+    "uses_database": true,
+    "uses_sessions": false,
+    "complexity": "simple",
+    "files": [
+      {
+        "file": "demo_legacy_project\\admin.php",
+        "lines": 7,
+        "has_mysql": false,
+        "has_sessions": false,
+        "has_forms": false,
+        "has_includes": false,
+        "functions": 1,
+        "classes": 1
+      },
+      {
+        "file": "demo_legacy_project\\index.php",
+        "lines": 18,
+        "has_mysql": true,
+        "has_sessions": false,
+        "has_forms": true,
+        "has_includes": true,
+        "functions": 1,
+        "classes": 0,
+        "needs": "API endpoints"
+      }
+    ]
+  },
+  "plan": {
+    "steps": [
+      {
+        "task": "Migrate database from MySQL to PostgreSQL",
+        "hours": 8,
+        "priority": "high"
+      },
+      {
+        "task": "Setup Next.js project",
+        "hours": 2,
+        "priority": "high"
+      },
+      {
+        "task": "Setup FastAPI backend",
+        "hours": 2,
+        "priority": "high"
+      },
+      {
+        "task": "Convert PHP logic to Python",
+        "hours": 0.25,
+        "priority": "medium"
+      },
+      {
+        "task": "Create API endpoints",
+        "hours": 4,
+        "priority": "medium"
+      },
+      {
+        "task": "Build React components",
+        "hours": 6,
+        "priority": "medium"
+      },
+      {
+        "task": "Testing",
+        "hours": 2.4,
+        "priority": "low"
+      },
+      {
+        "task": "Deployment",
+        "hours": 4,
+        "priority": "low"
+      }
+    ],
+    "estimated_hours": 28.65,
+    "new_stack": {
+      "frontend": "Next.js",
+      "backend": "FastAPI",
+      "database": "PostgreSQL",
+      "hosting": "Vercel + Railway"
+    }
+  },
+  "quote": {
+    "project": "demo_legacy_project",
+    "complexity": "simple",
+    "total_hours": 29,
+    "hourly_rate": 150,
+    "total_cost": 4298,
+    "timeline": "1 weeks",
+    "traditional_cost": 42975,
+    "savings": 38678,
+    "roi_percentage": 900
+  }
+}

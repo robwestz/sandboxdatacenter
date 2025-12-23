@@ -1,0 +1,17 @@
+# The Factory - Core Requirements
+# Only what's needed to RUN The Factory itself
+# (Generated projects will have their own requirements)
+
+# Required - Core dependencies
+pyyaml>=6.0              # For reading project specs and config files
+
+# Optional - Enhances functionality but not strictly required
+aiofiles>=23.0.0         # For async file operations (performance)
+python-dotenv>=1.0.0     # For .env file support (configuration)
+colorama>=0.4.6          # For colored terminal output (Windows compatibility)
+
+# Development/Testing - Only needed if developing The Factory itself
+# pytest>=7.4.0          # Uncomment if running tests
+# pytest-asyncio>=0.21.0 # Uncomment if running tests
+# black>=23.0.0          # Uncomment if formatting code
+# mypy>=1.5.0            # Uncomment if type checking

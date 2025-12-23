@@ -1,0 +1,110 @@
+═══════════════════════════════════════════════════════════════
+THE FACTORY - STANDARD EXPORT
+═══════════════════════════════════════════════════════════════
+
+Export Date: 2025-12-10
+Export Type: Standard (with auto-setup)
+Size: ~800 KB (without venv)
+
+WHAT'S INCLUDED:
+✅ Complete Factory source code
+✅ All documentation (docs/, examples/)
+✅ Visual explainer (interactive demo)
+✅ Automatic setup script (setup.py)
+✅ Minimal dependencies (4 packages, ~5 MB)
+
+SETUP INSTRUCTIONS:
+
+1. Run setup (ONE TIME ONLY):
+
+   Windows:
+   > python setup.py
+
+   Linux/Mac:
+   $ python3 setup.py
+
+   This takes 10-30 seconds and installs dependencies.
+
+2. Start building:
+
+   Windows:
+   > factory.bat "Build a todo app"
+
+   Linux/Mac:
+   $ ./factory.sh "Build a todo app"
+
+REQUIREMENTS:
+- Python 3.8 or higher
+- Internet connection (first-time setup only)
+- ~50 MB disk space (after setup with venv)
+
+DIRECTORY STRUCTURE:
+factory_standard_export/
+├── setup.py                  ← Run this first!
+├── README_STANDALONE.md      ← Full instructions
+├── run_factory.py            ← Main script
+├── requirements.txt          ← Only 4 packages
+├── bootstrap/                ← Core system
+├── lib/                      ← Fallback implementations
+├── docs/                     ← Complete documentation
+├── examples/                 ← Example specs
+├── prompts/                  ← AI agent prompts
+├── templates/                ← Project templates
+└── visual_explainer/         ← Interactive demo (open index.html)
+
+AFTER SETUP:
+├── venv/                     ← Virtual environment
+├── factory.bat/sh            ← Quick run script
+├── activate.bat/sh           ← Manual activation
+└── projects/                 ← Your builds go here
+
+DEPENDENCIES (will be installed by setup.py):
+- pyyaml (required)
+- aiofiles (optional, performance)
+- python-dotenv (optional, config)
+- colorama (optional, Windows colors)
+
+Total installation: ~5-10 MB, 10-30 seconds
+
+USAGE EXAMPLES:
+
+Natural language:
+  factory "Build a REST API for a blog"
+
+From project directory:
+  mkdir projects/my-app
+  # Create projects/my-app/project_spec.md
+  factory --project projects/my-app
+
+From example:
+  factory --spec examples/specs/gui_project_spec.md
+
+Interactive:
+  factory
+  # Follow the prompts
+
+Help:
+  factory --help
+
+DOCUMENTATION:
+- README_STANDALONE.md - Quick start guide
+- docs/guides/INSTRUCTIONS.md - Complete usage instructions
+- docs/guides/SPEC_OPTIMIZATION_LLM.md - How to write optimal specs
+- docs/system/SYSTEM_LLM.md - Internal architecture
+- visual_explainer/index.html - Interactive demo (open in browser)
+
+TROUBLESHOOTING:
+- "Python not found" → Install Python 3.8+ from python.org
+- "ModuleNotFoundError" → Run setup.py again
+- "factory.bat not found" → Run setup.py first
+
+NEXT STEPS:
+1. Read README_STANDALONE.md
+2. Run setup.py
+3. Try: factory "Build a simple todo app"
+4. Explore examples/ for more complex projects
+5. Open visual_explainer/index.html for interactive demo
+
+═══════════════════════════════════════════════════════════════
+The Factory - From idea to implementation in minutes.
+═══════════════════════════════════════════════════════════════

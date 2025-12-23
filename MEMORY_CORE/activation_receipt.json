@@ -1,0 +1,21 @@
+{
+  "activated_at": "2025-12-23T00:54:53.518987",
+  "session_id": "48371b4a649dc366",
+  "working_dir": "C:\\Users\\WDAGUtilityAccount\\Documents\\Datacenter",
+  "health": {
+    "status": "healthy",
+    "stats": {
+      "total_memories": 9,
+      "total_patterns": 0,
+      "total_sessions": 2,
+      "total_skills_used": 0,
+      "memory_types": {
+        "api_decision": 6,
+        "checkpoint": 3
+      },
+      "top_patterns": []
+    },
+    "session_id": "48371b4a649dc366",
+    "db_path": "C:\\Users\\WDAGUtilityAccount\\Documents\\Datacenter\\MEMORY_CORE\\central_memory.db"
+  }
+}

@@ -1,0 +1,177 @@
+═══════════════════════════════════════════════════════════════
+THE FACTORY - QUICK START GUIDE (Svenska: "Fabriken")
+═══════════════════════════════════════════════════════════════
+
+✅ EXPORT KLAR!
+
+📁 Plats: C:\Users\robin\OneDrive\Desktop\Fabriken
+📊 Storlek: 830 KB (utan dependencies)
+
+Detta är en FRISTÅENDE kopia av The Factory. Den fungerar helt
+självständigt och behöver inte originalprojektet.
+
+═══════════════════════════════════════════════════════════════
+STEP 1: OPEN IN PYCHARM
+═══════════════════════════════════════════════════════════════
+
+Option A: Double-click this file:
+   👉 OPEN_IN_PYCHARM.bat
+
+Option B: Open manually:
+   1. Open PyCharm
+   2. File -> Open
+   3. Select: C:\Users\robin\OneDrive\Desktop\Fabriken
+
+═══════════════════════════════════════════════════════════════
+STEG 2: KÖR SETUP (Första gången)
+═══════════════════════════════════════════════════════════════
+
+In PyCharm:
+1. Open Terminal (View -> Tool Windows -> Terminal)
+2. Run: python setup.py
+
+This installs dependencies (takes 10-30 seconds).
+
+═══════════════════════════════════════════════════════════════
+STEP 3: START BUILDING!
+═══════════════════════════════════════════════════════════════
+
+After setup, try:
+
+   factory.bat "Build a todo app"
+
+Or interactive mode:
+
+   factory.bat
+
+Or from examples:
+
+   factory.bat --spec examples/specs/gui_project_spec.md
+
+═══════════════════════════════════════════════════════════════
+WHAT'S INCLUDED
+═══════════════════════════════════════════════════════════════
+
+Core Files:
+  ✅ setup.py              - Run this first!
+  ✅ run_factory.py         - Main entry point
+  ✅ requirements.txt       - Only 4 packages needed
+
+Directories:
+  ✅ bootstrap/             - Core orchestration system
+  ✅ lib/                   - Fallback implementations
+  ✅ docs/                  - Complete documentation
+  ✅ examples/              - Example specifications
+  ✅ prompts/               - AI agent system prompts
+  ✅ templates/             - Project templates
+  ✅ visual_explainer/      - Interactive demo (open index.html)
+  ✅ projects/              - Your builds go here
+
+PyCharm Config:
+  ✅ .idea/                 - Project configuration
+  ✅ Run configurations set up (run_factory, setup)
+
+═══════════════════════════════════════════════════════════════
+DEPENDENCIES (Installed by setup.py)
+═══════════════════════════════════════════════════════════════
+
+Only 4 packages needed:
+  • pyyaml         (required)
+  • aiofiles       (optional, performance)
+  • python-dotenv  (optional, config)
+  • colorama       (optional, colors)
+
+Total: ~5-10 MB, installs in 10-30 seconds
+
+═══════════════════════════════════════════════════════════════
+USAGE EXAMPLES
+═══════════════════════════════════════════════════════════════
+
+Natural language:
+  factory.bat "Build a REST API for a blog with FastAPI"
+
+From project directory:
+  mkdir projects\my-app
+  notepad projects\my-app\project_spec.md
+  factory.bat --project projects\my-app
+
+From example:
+  factory.bat --spec examples\specs\gui_project_spec.md
+
+Help:
+  factory.bat --help
+
+═══════════════════════════════════════════════════════════════
+DOCUMENTATION
+═══════════════════════════════════════════════════════════════
+
+Must Read:
+  📖 README_STANDALONE.md    - Complete quick start
+  📖 EXPORT_INFO.txt         - Export details
+
+User Guides:
+  📖 docs/guides/INSTRUCTIONS.md
+  📖 docs/guides/SPEC_OPTIMIZATION_LLM.md
+  📖 docs/guides/QUICK_REFERENCE.md
+
+System Architecture:
+  📖 docs/system/SYSTEM_LLM.md
+  📖 docs/system/ARCHITECTURE_DECISIONS.md
+
+Interactive Demo:
+  🌐 visual_explainer/index.html (open in browser)
+
+═══════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+Q: PyCharm doesn't open?
+A: Open PyCharm manually: File -> Open -> select this folder
+
+Q: "Python not found"?
+A: Install Python 3.8+ from python.org
+
+Q: "ModuleNotFoundError"?
+A: Run setup.py again in PyCharm terminal
+
+Q: factory.bat not found?
+A: Run setup.py first - it creates this script
+
+═══════════════════════════════════════════════════════════════
+NEXT STEPS
+═══════════════════════════════════════════════════════════════
+
+✅ Du är här: Export klar i OneDrive/Desktop/Fabriken
+
+1️⃣  Öppna i PyCharm (dubbelklicka OPEN_IN_PYCHARM.bat)
+
+2️⃣  I PyCharm terminal: python setup.py
+
+3️⃣  Testa: factory.bat "Bygg en enkel kalkylator"
+
+4️⃣  Utforska examples/ för mer komplexa projekt
+
+5️⃣  Läs docs/guides/ för detaljerade instruktioner
+
+═══════════════════════════════════════════════════════════════
+
+🎉 The Factory är redo! Lycka till med byggandet!
+
+Från idé till implementation på minuter, inte månader.
+
+═══════════════════════════════════════════════════════════════
+
+FRISTÅENDE KOPIA
+═══════════════════════════════════════════════════════════════
+
+Detta är en komplett, självständig kopia. Den fungerar helt utan:
+- Originalprojektet i gemini-flow/the_factory/
+- Andra beroenden än Python 3.8+ och de 4 paketen
+
+Du kan:
+✅ Flytta denna mapp var som helst
+✅ Ta bort originalet om du vill
+✅ Dela denna mapp med andra
+✅ Köra på andra datorer (efter python setup.py)
+
+═══════════════════════════════════════════════════════════════

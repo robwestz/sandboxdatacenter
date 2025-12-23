@@ -1,0 +1,13 @@
+{
+  "export_timestamp": "2025-12-23T01:16:19.071776",
+  "workspace_root": "C:\\Users\\WDAGUtilityAccount\\Documents\\Datacenter",
+  "workspace_name": "Datacenter",
+  "python_version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "session_id": "fce54df7190de83a",
+  "export_version": "1.0",
+  "host_instructions": {
+    "storage": "Store this file somewhere safe on host",
+    "restore": "Copy to new sandbox Documents folder and run SANDBOX_IMPORT.py",
+    "size_optimized": "Cache and temp files excluded"
+  }
+}

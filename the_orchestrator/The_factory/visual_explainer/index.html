@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏭 The Factory - Förklarat Visuellt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="title">🏭 THE FACTORY</h1>
+            <p class="subtitle">Robotar som skapar robotar som bygger program</p>
+            <div class="hero-animation" id="heroAnimation">
+                <div class="magic-box">
+                    <div class="box-content">
+                        <span class="box-emoji">📦</span>
+                        <p>Magiska Lego-Lådan</p>
+                    </div>
+                </div>
+            </div>
+            <button class="cta-button" onclick="startDemo()">✨ Se Magin!</button>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-button active" onclick="showSection('intro')">🎨 Intro</button>
+            <button class="tab-button" onclick="showSection('chain')">⚡ Kedjereaktioner</button>
+            <button class="tab-button" onclick="showSection('examples')">📱 Exempel</button>
+            <button class="tab-button" onclick="showSection('possibilities')">🚀 Möjligheter</button>
+        </nav>
+
+        <!-- Section 1: Intro -->
+        <section id="intro" class="content-section active">
+            <h2>🎨 Vad är The Factory?</h2>
+
+            <div class="card">
+                <h3>Tänk dig en magisk lego-låda...</h3>
+                <div class="comparison">
+                    <div class="comparison-item">
+                        <h4>❌ Vanliga program</h4>
+                        <div class="timeline">
+                            <div class="timeline-step">1. Du: "Jag vill ha en app"</div>
+                            <div class="timeline-step slow">2. Programmerare: *3 månader*</div>
+                            <div class="timeline-step">3. Kanske fungerar det...</div>
+                        </div>
+                    </div>
+                    <div class="comparison-item highlight">
+                        <h4>✅ The Factory</h4>
+                        <div class="timeline">
+                            <div class="timeline-step">1. Du: "Jag vill ha en app"</div>
+                            <div class="timeline-step fast">2. Factory: *2 timmar*</div>
+                            <div class="timeline-step success">3. Klar! Här är din app!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Hur fungerar det?</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>📝 Du skriver en önskelista</h4>
+                            <p>Berätta vad du vill ha, som att skriva en lista åt tomten</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>🧠 The Factory förstår</h4>
+                            <p>Den läser listan och planerar hur allt ska byggas</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>🤖 Robot-explosion!</h4>
+                            <p>Massor av robotar börjar bygga samtidigt</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>✅ Kvalitetskontroll</h4>
+                            <p>Robotarna kollar att allt fungerar perfekt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Chain Reaction -->
+        <section id="chain" class="content-section">
+            <h2>⚡ Kedjereaktioner - Robotar skapar robotar!</h2>
+
+            <div class="card">
+                <h3>Se hur det händer:</h3>
+                <div class="chain-controls">
+                    <button class="btn-primary" onclick="startChainReaction()">▶️ Starta Kedjereaktionen</button>
+                    <button class="btn-secondary" onclick="resetChainReaction()">🔄 Återställ</button>
+                </div>
+
+                <div id="chainVisualization" class="chain-visualization">
+                    <!-- Robots will be added here by JavaScript -->
+                </div>
+
+                <div class="robot-counter">
+                    <span class="counter-label">Totalt antal robotar:</span>
+                    <span id="robotCount" class="counter-value">0</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Så fungerar kedjereaktionen:</h3>
+                <div class="explanation-list">
+                    <div class="explanation-item">
+                        <span class="emoji">🤖</span>
+                        <div>
+                            <strong>Genesis Prime</strong> vaknar först
+                            <p>"Jag behöver hjälp att bygga detta!"</p>
+                        </div>
+                    </div>
+                    <div class="explanation-item">
+                        <span class="emoji">👥</span>
+                        <div>
+                            <strong>Skapar specialister</strong>
+                            <p>Analyzer, Architect, och Builder-robotar</p>
+                        </div>
+                    </div>
+                    <div class="explanation-item">
+                        <span class="emoji">🌊</span>
+                        <div>
+                            <strong>Varje robot skapar fler</strong>
+                            <p>Builders skapar Testers, Fixers, och Documenters</p>
+                        </div>
+                    </div>
+                    <div class="explanation-item">
+                        <span class="emoji">⚡</span>
+                        <div>
+                            <strong>Exponentiell tillväxt</strong>
+                            <p>1 → 3 → 9 → 27 → 81 robotar på några sekunder!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Examples -->
+        <section id="examples" class="content-section">
+            <h2>📱 Konkreta Exempel</h2>
+
+            <div class="example-selector">
+                <button class="example-btn active" onclick="showExample('todo')">
+                    📝 Todo-App
+                    <span class="difficulty easy">Enkelt</span>
+                </button>
+                <button class="example-btn" onclick="showExample('kattflix')">
+                    🐱 KattFlix
+                    <span class="difficulty medium">Mellan</span>
+                </button>
+                <button class="example-btn" onclick="showExample('os')">
+                    💻 Operativsystem
+                    <span class="difficulty hard">Extremt</span>
+                </button>
+            </div>
+
+            <!-- Todo App Example -->
+            <div id="example-todo" class="example-card active">
+                <h3>📝 Todo-App - Så byggs den (steg-för-steg)</h3>
+                <div class="example-content">
+                    <div class="example-spec">
+                        <h4>Din önskelista:</h4>
+                        <div class="spec-box">
+                            <p><strong>Namn:</strong> Min Todo-Lista</p>
+                            <p><strong>Ska kunna:</strong></p>
+                            <ul>
+                                <li>Lägga till saker att göra</li>
+                                <li>Bocka av när jag är klar</li>
+                                <li>Se vad som är viktigast</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <h4>The Factory tänker:</h4>
+                        <div class="thinking-box">
+                            <p>"Okej, det här är ENKELT! Men låt mig göra det ordentligt."</p>
+                            <div class="robot-stats">
+                                <div class="stat">
+                                    <span class="stat-number">5</span>
+                                    <span class="stat-label">robotar</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">10</span>
+                                    <span class="stat-label">minuter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-timeline">
+                    <h4>📖 Så här byggs Todo-appen:</h4>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">0-2 min</span>
+                            <span class="process-phase">Fas 1: Analys</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Genesis Prime spawnar en Analyzer-robot</strong></p>
+                            <p>Den tänker:</p>
+                            <ul>
+                                <li>"OK, vi behöver en lista som kan lagra todos"</li>
+                                <li>"Varje todo behöver: text, checkbox, prioritet"</li>
+                                <li>"Vi behöver en input-ruta för att lägga till nya"</li>
+                                <li>"Vi behöver spara i local storage (så det inte försvinner)"</li>
+                            </ul>
+                            <p class="output-preview">📋 Plan klar: En enkel single-page app</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">2-6 min</span>
+                            <span class="process-phase">Fas 2: Byggande</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 3 Builder-robotar arbetar parallellt:</strong></p>
+
+                            <div class="sub-step">
+                                <p><strong>Robot 1: HTML & CSS</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Input-fält där du skriver din todo</li>
+                                    <li>"Lägg till"-knapp</li>
+                                    <li>Lista som visar alla todos</li>
+                                    <li>Checkboxar för att bocka av</li>
+                                    <li>Snygga färger och layout</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>index.html</code> - Strukturen<br>
+                                    <code>styles.css</code> - Gör det snyggt
+                                </p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Robot 2: Funktionalitet</strong></p>
+                                <p>Skriver JavaScript som:</p>
+                                <ul>
+                                    <li>Lägger till nya todos när du klickar knappen</li>
+                                    <li>Markerar todos som klara när du bockar i</li>
+                                    <li>Tar bort todos</li>
+                                    <li>Sorterar efter prioritet</li>
+                                    <li>Sparar till local storage automatiskt</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>app.js</code> - Hela logiken (ca 150 rader)
+                                </p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Robot 3: Data-hantering</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>System för att spara todos i webbläsaren</li>
+                                    <li>Laddar todos när du öppnar appen igen</li>
+                                    <li>Hanterar prioriteter (hög, mellan, låg)</li>
+                                </ul>
+                                <p class="output-preview">💾 Dina todos försvinner aldrig!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">6-8 min</span>
+                            <span class="process-phase">Fas 3: Test</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 En Tester-robot kollar allt:</strong></p>
+                            <div class="test-checklist">
+                                <div class="test-item">✅ Kan lägga till todo?</div>
+                                <div class="test-item">✅ Kan bocka av?</div>
+                                <div class="test-item">✅ Kan ta bort?</div>
+                                <div class="test-item">✅ Sparas när jag stänger?</div>
+                                <div class="test-item">✅ Laddas när jag öppnar igen?</div>
+                                <div class="test-item">✅ Prioriteter fungerar?</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step final-step">
+                        <div class="process-header">
+                            <span class="process-time">~10 min totalt</span>
+                            <span class="process-phase">✨ KLAR!</span>
+                        </div>
+                        <div class="process-content">
+                            <h4>Vad du får:</h4>
+                            <div class="final-deliverables">
+                                <div class="deliverable-group">
+                                    <h5>📱 Färdig App</h5>
+                                    <ul>
+                                        <li>3 filer: HTML, CSS, JS</li>
+                                        <li>Totalt ~300 rader kod</li>
+                                        <li>Fungerar i alla webbläsare</li>
+                                        <li>Mobil-vänlig</li>
+                                    </ul>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>📖 Dokumentation</h5>
+                                    <ul>
+                                        <li>README.md med instruktioner</li>
+                                        <li>Kommenterad kod</li>
+                                        <li>Hur man använder den</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="reality-check">
+                                <strong>💡 Detta är en RIKTIG app.</strong><br>
+                                Du kan öppna index.html i din webbläsare direkt och börja använda den!
+                                Den sparar allt automatiskt och fungerar offline.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="understanding-box">
+                    <h4>🎓 Varför går det så snabbt?</h4>
+                    <ul>
+                        <li>✅ <strong>Enkelt projekt:</strong> En todo-app är väldefinierad</li>
+                        <li>✅ <strong>Standard-teknologi:</strong> Bara HTML, CSS, JavaScript</li>
+                        <li>✅ <strong>Inga dependencies:</strong> Inget npm install, inget build-steg</li>
+                        <li>✅ <strong>Parallellt:</strong> Även här jobbar flera robotar samtidigt</li>
+                    </ul>
+                    <p><strong>🚀 Perfekt som första projekt!</strong> Om du vill testa The Factory, börja med något enkelt som detta.</p>
+                </div>
+            </div>
+
+            <!-- KattFlix Example -->
+            <div id="example-kattflix" class="example-card">
+                <h3>🐱 KattFlix - Netflix för kattvideos (steg-för-steg)</h3>
+                <div class="example-content">
+                    <div class="example-spec">
+                        <h4>Din önskelista:</h4>
+                        <div class="spec-box">
+                            <p><strong>Namn:</strong> KattFlix</p>
+                            <p><strong>Ska kunna:</strong></p>
+                            <ul>
+                                <li>Ladda upp kattvideos</li>
+                                <li>Streama videos smidigt</li>
+                                <li>Kommentera och gilla</li>
+                                <li>AI som rekommenderar videos</li>
+                                <li>Klara 1 miljon användare</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <h4>The Factory analyserar:</h4>
+                        <div class="thinking-box">
+                            <p>"Detta behöver parallella team!"</p>
+                            <div class="robot-stats">
+                                <div class="stat">
+                                    <span class="stat-number">150</span>
+                                    <span class="stat-label">robotar</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2-3</span>
+                                    <span class="stat-label">timmar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-timeline">
+                    <h4>📖 Så här byggs KattFlix:</h4>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">0-20 min</span>
+                            <span class="process-phase">Fas 1: Planering</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Analyzer-robotar delar upp i moduler:</strong></p>
+                            <div class="parallel-teams">
+                                <div class="team-work">
+                                    <p><strong>Modul 1:</strong> Video-hantering</p>
+                                    <ul>
+                                        <li>Uppladdning</li>
+                                        <li>Konvertering</li>
+                                        <li>Lagring</li>
+                                    </ul>
+                                </div>
+                                <div class="team-work">
+                                    <p><strong>Modul 2:</strong> Streaming</p>
+                                    <ul>
+                                        <li>Video-server</li>
+                                        <li>Buffring</li>
+                                        <li>Kvalitets-anpassning</li>
+                                    </ul>
+                                </div>
+                                <div class="team-work">
+                                    <p><strong>Modul 3:</strong> Social</p>
+                                    <ul>
+                                        <li>Kommentarer</li>
+                                        <li>Likes</li>
+                                        <li>Delningar</li>
+                                    </ul>
+                                </div>
+                                <div class="team-work">
+                                    <p><strong>Modul 4:</strong> AI</p>
+                                    <ul>
+                                        <li>Rekommendationer</li>
+                                        <li>Sökfunktion</li>
+                                        <li>Trend-analys</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">20-80 min</span>
+                            <span class="process-phase">Fas 2: Parallellt byggande</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 10 team arbetar samtidigt!</strong></p>
+
+                            <div class="sub-step">
+                                <p><strong>Team Alpha (15 robotar): Video-uppladdning</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Drag-and-drop interface</li>
+                                    <li>Progress bar för uppladdning</li>
+                                    <li>Automatisk video-konvertering till olika format</li>
+                                    <li>Thumbnail-generering</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>upload/uploader.js</code> - Hanterar uppladdning<br>
+                                    <code>upload/converter.js</code> - Konverterar videos<br>
+                                    <code>upload/thumbnail.js</code> - Skapar förhandsbilder
+                                </p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Team Beta (20 robotar): Streaming Engine</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Video-spelare med pause/play/seek</li>
+                                    <li>Adaptiv streaming (anpassar kvalitet efter internet-hastighet)</li>
+                                    <li>Buffert-hantering (ingen hackighet!)</li>
+                                </ul>
+                                <p class="output-preview">🎥 Nu kan man streama videos smidigt!</p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Team Gamma (15 robotar): Social Features</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Kommentars-system (med spam-filter)</li>
+                                    <li>Like/dislike buttons</li>
+                                    <li>Dela-funktioner (Facebook, Twitter, etc)</li>
+                                    <li>Notifikationer</li>
+                                </ul>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Team Delta (25 robotar): AI-Motor</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Machine learning-modell som lär sig vad du gillar</li>
+                                    <li>"Rekommenderat för dig" feed</li>
+                                    <li>Smart sökfunktion</li>
+                                    <li>Trend-detektion (vilka videos är populära)</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>ai/recommender.py</code> - AI som rekommenderar<br>
+                                    <code>ai/search.py</code> - Smart sökning<br>
+                                    <code>ai/trending.py</code> - Hittar trending videos
+                                </p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Team Epsilon (20 robotar): Backend & Databas</strong></p>
+                                <p>Bygger:</p>
+                                <ul>
+                                    <li>Databas som klarar miljoner videos</li>
+                                    <li>API för all kommunikation</li>
+                                    <li>Caching för snabbhet</li>
+                                    <li>Load balancing (fördela last mellan servrar)</li>
+                                </ul>
+                                <p class="output-preview">💪 Systemet klarar 1 miljon användare!</p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>Team Zeta (20 robotar): Frontend</strong></p>
+                                <p>Bygger samtidigt:</p>
+                                <ul>
+                                    <li>Webbsida (React)</li>
+                                    <li>iOS-app (Swift)</li>
+                                    <li>Android-app (Kotlin)</li>
+                                </ul>
+                                <p>Alla tre får samma features!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">80-120 min</span>
+                            <span class="process-phase">Fas 3: Integration</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Integrator-robotar kopplar ihop allt</strong></p>
+                            <p>Nu har vi massa delar - de ska fungera tillsammans:</p>
+                            <ul>
+                                <li>✅ Uppladdning → sparas i databas → dyker upp i feed</li>
+                                <li>✅ Du gillar en video → AI lär sig → bättre rekommendationer</li>
+                                <li>✅ Du kommenterar → notis till video-ägaren</li>
+                                <li>✅ Många tittar samtidigt → load balancer fördelar trafik</li>
+                            </ul>
+                            <p class="output-preview">🔗 Allt pratar med varandra!</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">120-160 min</span>
+                            <span class="process-phase">Fas 4: Test & Optimering</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Tester-robotar kollar ALLT</strong></p>
+                            <div class="test-checklist">
+                                <div class="test-item">✅ Kan ladda upp video?</div>
+                                <div class="test-item">✅ Streaming funkar smidigt?</div>
+                                <div class="test-item">✅ AI ger bra förslag?</div>
+                                <div class="test-item">✅ Kommentarer sparas?</div>
+                                <div class="test-item">✅ Klarar 10,000 samtidiga användare?</div>
+                                <div class="test-item">✅ Funkar på iPhone?</div>
+                                <div class="test-item">✅ Funkar på Android?</div>
+                            </div>
+                            <p><strong>🤖 Optimizer-robotar fixar:</strong></p>
+                            <ul>
+                                <li>Videos laddar snabbare</li>
+                                <li>Mindre data-användning</li>
+                                <li>AI blir smartare</li>
+                                <li>Design blir snyggare</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step final-step">
+                        <div class="process-header">
+                            <span class="process-time">~2.5 timmar totalt</span>
+                            <span class="process-phase">✨ LANSERING!</span>
+                        </div>
+                        <div class="process-content">
+                            <h4>Vad du får:</h4>
+                            <div class="final-deliverables">
+                                <div class="deliverable-group">
+                                    <h5>🌐 Webbsida</h5>
+                                    <p>Redo att deploya till internet</p>
+                                    <ul>
+                                        <li>Responsiv design</li>
+                                        <li>SEO-optimerad</li>
+                                        <li>Snabb & modern</li>
+                                    </ul>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>📱 Mobilappar</h5>
+                                    <p>Klara att publicera</p>
+                                    <ul>
+                                        <li>iOS (App Store)</li>
+                                        <li>Android (Play Store)</li>
+                                        <li>Samma funktioner</li>
+                                    </ul>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>🗄️ Backend</h5>
+                                    <p>Skalbar infrastruktur</p>
+                                    <ul>
+                                        <li>API för allt</li>
+                                        <li>Databas-setup</li>
+                                        <li>Cloud-konfiguration</li>
+                                    </ul>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>🤖 AI-Motor</h5>
+                                    <p>Intelligent rekommendation</p>
+                                    <ul>
+                                        <li>Tränad modell</li>
+                                        <li>Smart sökning</li>
+                                        <li>Trend-analys</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="reality-check">
+                                <strong>💡 Detta är en FULLSTÄNDIG streaming-plattform.</strong><br>
+                                Du kan bokstavligen lansera den och ha en fungerande "Netflix för katter"!
+                                Den klarar miljoner användare, har AI-rekommendationer, och fungerar på alla enheter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="understanding-box">
+                    <h4>🎓 Nyckeln till hastigheten:</h4>
+                    <ul>
+                        <li>✅ <strong>Parallellt arbete:</strong> 10 team bygger samtidigt</li>
+                        <li>✅ <strong>Smarthet:</strong> AI-robotarna vet redan hur man bygger streaming-system</li>
+                        <li>✅ <strong>Återanvändning:</strong> De använder beprövade patterns</li>
+                        <li>✅ <strong>Automatisering:</strong> Tester och deployment är automatiskt</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- OS Example -->
+            <div id="example-os" class="example-card">
+                <h3>💻 Operativsystem - Så går det till (steg-för-steg)</h3>
+                <div class="example-content">
+                    <div class="example-spec">
+                        <h4>Din önskelista:</h4>
+                        <div class="spec-box">
+                            <p><strong>Namn:</strong> Mitt OS</p>
+                            <p><strong>Ska kunna:</strong></p>
+                            <ul>
+                                <li>Starta datorn</li>
+                                <li>Köra program</li>
+                                <li>Hantera filer</li>
+                                <li>Nätverksanslutning</li>
+                                <li>Grafiskt gränssnitt</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="example-result">
+                        <h4>The Factory analyserar:</h4>
+                        <div class="thinking-box">
+                            <p>"Detta kräver flera lager!"</p>
+                            <div class="robot-stats">
+                                <div class="stat">
+                                    <span class="stat-number">200+</span>
+                                    <span class="stat-label">robotar</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">4-6</span>
+                                    <span class="stat-label">timmar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Process Steps -->
+                <div class="process-timeline">
+                    <h4>📖 Så här går det till i praktiken:</h4>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">0-30 min</span>
+                            <span class="process-phase">Fas 1: Analys & Planering</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Genesis Prime spawnar Analyzer-robotar</strong></p>
+                            <p>De läser din önskelista och tänker:</p>
+                            <ul>
+                                <li>"OK, ett OS behöver en KERNEL (hjärnan)"</li>
+                                <li>"Det behöver BOOT-kod (för att starta)"</li>
+                                <li>"Det behöver FILSYSTEM (för att spara saker)"</li>
+                                <li>"Det behöver DRIVRUTINER (för tangentbord, mus, skärm)"</li>
+                                <li>"Det behöver MINNESHANTERING"</li>
+                                <li>"Det behöver GUI (fönster och knappar)"</li>
+                            </ul>
+                            <p class="output-preview">📄 Skapar: <code>architecture_plan.md</code> med hela planen</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">30-90 min</span>
+                            <span class="process-phase">Fas 2: Lager-för-lager byggande</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 10 Architect-robotar spawnas, en för varje del</strong></p>
+
+                            <div class="sub-step">
+                                <p><strong>🔹 Lager 1: Boot & Kernel (grunden)</strong></p>
+                                <p>Team Alpha börjar med det allra första:</p>
+                                <ul>
+                                    <li>Bootloader (startar datorn)</li>
+                                    <li>Kernel (kärnan som styr allt)</li>
+                                    <li>Minneshantering (håller reda på RAM)</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>kernel/boot.asm</code> - Kod som körs när datorn startar<br>
+                                    <code>kernel/memory.c</code> - Hanterar minne<br>
+                                    <code>kernel/scheduler.c</code> - Bestämmer vilket program som får köra
+                                </p>
+                            </div>
+
+                            <div class="sub-step">
+                                <p><strong>🔹 Lager 2: Drivrutiner (pratat med hårdvara)</strong></p>
+                                <p>Team Beta bygger parallellt:</p>
+                                <ul>
+                                    <li>Tangentbords-drivrutin (läser tangenttryckningar)</li>
+                                    <li>Skärm-drivrutin (visar pixlar)</li>
+                                    <li>Disk-drivrutin (läser/skriver filer)</li>
+                                    <li>Nätverk-drivrutin (skickar/tar emot data)</li>
+                                </ul>
+                                <p class="code-example">
+                                    <code>drivers/keyboard.c</code><br>
+                                    <code>drivers/display.c</code><br>
+                                    <code>drivers/network.c</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">90-180 min</span>
+                            <span class="process-phase">Fas 3: System-tjänster</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 50+ Builder-robotar spawnas för alla delar</strong></p>
+
+                            <div class="parallel-teams">
+                                <div class="team-work">
+                                    <p><strong>Team Gamma:</strong> Filsystem</p>
+                                    <ul>
+                                        <li>Skapa mappar</li>
+                                        <li>Spara filer</li>
+                                        <li>Läsa filer</li>
+                                        <li>Ta bort filer</li>
+                                    </ul>
+                                </div>
+                                <div class="team-work">
+                                    <p><strong>Team Delta:</strong> Process-hantering</p>
+                                    <ul>
+                                        <li>Starta program</li>
+                                        <li>Stoppa program</li>
+                                        <li>Flera program samtidigt</li>
+                                    </ul>
+                                </div>
+                                <div class="team-work">
+                                    <p><strong>Team Epsilon:</strong> Säkerhet</p>
+                                    <ul>
+                                        <li>Användarkonton</li>
+                                        <li>Lösenord</li>
+                                        <li>Behörigheter</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="output-preview">📦 Nu har vi ett fungerande kommando-baserat OS!</p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">180-240 min</span>
+                            <span class="process-phase">Fas 4: Grafiskt Gränssnitt</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Team Zeta bygger "det vackra skalet"</strong></p>
+                            <ul>
+                                <li><strong>Fönster-system:</strong> Kan visa flera fönster samtidigt</li>
+                                <li><strong>Knappar & menyer:</strong> Klickbara saker</li>
+                                <li><strong>Ikoner:</strong> Snygga bilder för program</li>
+                                <li><strong>Desktop:</strong> Bakgrundsbild och shortcuts</li>
+                                <li><strong>Filhanterare:</strong> Bläddra bland filer visuellt</li>
+                            </ul>
+                            <p class="code-example">
+                                <code>gui/window_manager.c</code> - Hanterar fönster<br>
+                                <code>gui/desktop.c</code> - Desktop med ikoner<br>
+                                <code>gui/file_browser.c</code> - Filhanterare
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-header">
+                            <span class="process-time">240-300 min</span>
+                            <span class="process-phase">Fas 5: Test & Dokumentation</span>
+                        </div>
+                        <div class="process-content">
+                            <p><strong>🤖 Validator & Tester-robotar kollar allt</strong></p>
+                            <div class="test-checklist">
+                                <div class="test-item">✅ Startar datorn korrekt?</div>
+                                <div class="test-item">✅ Tangentbord fungerar?</div>
+                                <div class="test-item">✅ Kan skapa filer?</div>
+                                <div class="test-item">✅ Flera program samtidigt?</div>
+                                <div class="test-item">✅ Internet fungerar?</div>
+                                <div class="test-item">✅ Inga krascher?</div>
+                            </div>
+                            <p><strong>🤖 Documenter-robotar skriver:</strong></p>
+                            <ul>
+                                <li>Installations-guide</li>
+                                <li>Användar-manual</li>
+                                <li>Utvecklar-dokumentation</li>
+                                <li>API-referens</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step final-step">
+                        <div class="process-header">
+                            <span class="process-time">~5 timmar totalt</span>
+                            <span class="process-phase">✨ KLART!</span>
+                        </div>
+                        <div class="process-content">
+                            <h4>Vad du får:</h4>
+                            <div class="final-deliverables">
+                                <div class="deliverable-group">
+                                    <h5>💿 Bootbar ISO-fil</h5>
+                                    <p>Du kan installera OS:et på en dator!</p>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>📁 Full Källkod (~50,000 rader)</h5>
+                                    <ul>
+                                        <li><code>kernel/</code> (5,000 rader)</li>
+                                        <li><code>drivers/</code> (10,000 rader)</li>
+                                        <li><code>filesystem/</code> (8,000 rader)</li>
+                                        <li><code>gui/</code> (15,000 rader)</li>
+                                        <li><code>apps/</code> (12,000 rader)</li>
+                                    </ul>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>📚 Komplett Dokumentation</h5>
+                                    <p>Hur allt fungerar + hur man använder det</p>
+                                </div>
+                                <div class="deliverable-group">
+                                    <h5>🧪 Test Suite</h5>
+                                    <p>Automatiska test för att säkerställa att allt fungerar</p>
+                                </div>
+                            </div>
+                            <p class="reality-check">
+                                <strong>💡 Detta är INTE ett leksaks-OS.</strong><br>
+                                Det är en fungerande grund som faktiskt kan starta en dator och köra program.
+                                Visst, det är inte lika avancerat som Windows eller MacOS (de har utvecklats i 30+ år),
+                                men det är början på något riktigt!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="understanding-box">
+                    <h4>🎓 Nu förstår du:</h4>
+                    <ul>
+                        <li>✅ Det är inte magi - det är organiserat teamwork</li>
+                        <li>✅ Varje robot har en specifik uppgift</li>
+                        <li>✅ De bygger lager på lager (som Lego)</li>
+                        <li>✅ De jobbar parallellt (många samtidigt)</li>
+                        <li>✅ De testar och dokumenterar allt</li>
+                        <li>✅ Resultatet är RIKTIG, fungerande kod</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Possibilities -->
+        <section id="possibilities" class="content-section">
+            <h2>🚀 Vad möjliggör detta?</h2>
+
+            <div class="possibilities-grid">
+                <div class="possibility-card">
+                    <div class="possibility-icon">👶</div>
+                    <h3>Alla kan bygga</h3>
+                    <p>10-åringen med en cool idé kan faktiskt bygga den! Ingen programmering krävs.</p>
+                    <div class="before-after">
+                        <div class="before">Innan: Lär dig koda (1 år)</div>
+                        <div class="after">Nu: Beskriv idén (10 min)</div>
+                    </div>
+                </div>
+
+                <div class="possibility-card">
+                    <div class="possibility-icon">⚡</div>
+                    <h3>Testa 100 idéer</h3>
+                    <p>Istället för att testa 5 idéer på ett år, testa 100 idéer på en vecka!</p>
+                    <div class="stats-comparison">
+                        <div class="stat-item">
+                            <div class="stat-old">5 idéer/år</div>
+                            <div class="stat-arrow">→</div>
+                            <div class="stat-new">100 idéer/vecka</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="possibility-card">
+                    <div class="possibility-icon">🎨</div>
+                    <h3>Personliga verktyg</h3>
+                    <p>Alla kan ha sina EGNA verktyg, byggda exakt som de vill!</p>
+                    <div class="example-tools">
+                        <div class="tool">📚 Min studie-app</div>
+                        <div class="tool">🎮 Mitt dream-spel</div>
+                        <div class="tool">🎵 Min musik-app</div>
+                    </div>
+                </div>
+
+                <div class="possibility-card">
+                    <div class="possibility-icon">🌍</div>
+                    <h3>Experimentera fritt</h3>
+                    <p>"Hur skulle Pokemon + Minecraft se ut?" - Bygg och testa på timmar!</p>
+                    <div class="experiment-flow">
+                        <span>Idé</span> →
+                        <span>Beskriv</span> →
+                        <span>Bygg (2h)</span> →
+                        <span>Testa!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card impact-card">
+                <h3>🤯 Den stora förändringen</h3>
+                <div class="impact-comparison">
+                    <div class="impact-before">
+                        <h4>Innan The Factory:</h4>
+                        <div class="funnel">
+                            <div class="funnel-item">1000 personer har en idé</div>
+                            <div class="funnel-item">100 kan programmera</div>
+                            <div class="funnel-item">10 har tid att bygga</div>
+                            <div class="funnel-item final">1 lyckas faktiskt</div>
+                        </div>
+                    </div>
+                    <div class="impact-after">
+                        <h4>Med The Factory:</h4>
+                        <div class="funnel success-funnel">
+                            <div class="funnel-item">1000 personer har en idé</div>
+                            <div class="funnel-item">1000 beskriver sin idé</div>
+                            <div class="funnel-item">1000 får den byggd</div>
+                            <div class="funnel-item final">100 är riktigt bra!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="impact-result">
+                    <strong>= 100x fler idéer blir verklighet! 🚀</strong>
+                </div>
+            </div>
+
+            <div class="card philosophy-card">
+                <h3>💫 Den filosofiska tanken</h3>
+                <div class="philosophy">
+                    <p class="quote">
+                        "Förr kunde bara de som kunde smida spjut gå och jaga.<br>
+                        Sen uppfann vi verktyg, och plötsligt kunde <strong>alla</strong> jaga."
+                    </p>
+                    <p class="quote">
+                        "Förr kunde bara de som kunde programmera bygga program.<br>
+                        Nu uppfinner vi The Factory, och snart kan <strong>alla</strong> bygga program."
+                    </p>
+                    <div class="big-question">
+                        <h4>När alla kan bygga, vad kommer människor bygga då?</h4>
+                        <p class="answer">Förmodligen saker vi inte ens kan föreställa oss idag! 🚀</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>✨ The Factory - Där idéer blir verklighet ✨</p>
+            <p class="tagline">"Varje barn är en uppfinnare, varje vuxen är en skapare.<br>The Factory är verktyget som låter alla bygga sina drömmar."</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

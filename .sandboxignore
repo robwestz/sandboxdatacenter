@@ -1,0 +1,64 @@
+# Sandbox Export Ignore List
+# Files and folders that should NOT be exported (to save space and time)
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Large data files
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Virtual environments (should be recreated)
+venv/
+env/
+ENV/
+.venv/
+
+# Node modules (if any)
+node_modules/
+
+# Large binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Database dumps (too large, use exports instead)
+*.dump
+*.sql.gz
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
