@@ -107,6 +107,21 @@ class CentralMemorySystem:
             )
         ''')
 
+        # Agent-to-agent handoffs (living context transfer)
+        conn.execute('''
+            CREATE TABLE IF NOT EXISTS handoffs (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                session_id TEXT NOT NULL,
+                timestamp TIMESTAMP NOT NULL,
+                agent_id TEXT,
+                handoff_data TEXT,
+                knowledge_score INTEGER,
+                accomplishments TEXT,
+                warnings TEXT,
+                next_steps TEXT
+            )
+        ''')
+
         # Create indexes
         conn.execute('CREATE INDEX IF NOT EXISTS idx_type ON memories(type)')
         conn.execute('CREATE INDEX IF NOT EXISTS idx_session ON memories(session_id)')
