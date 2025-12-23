@@ -6,7 +6,16 @@
 
 ## TL;DR - Get Back Up to Speed in 5 Minutes
 
-### Option A: Full Workspace Restoration (Recommended)
+### STEP 1: See Previous Agent's Handoff (NEW!)
+```bash
+python AGENT_HANDOFF_TEMPLATE.py
+# Shows what previous agent accomplished, warnings, next steps
+# This is the ACTUAL current state, not a static briefing
+```
+
+### STEP 2: Restore Workspace
+
+**Option A: Full Workspace Restoration (Recommended)**
 ```powershell
 # 1. Copy latest ZIP from Desktop to sandbox (if available)
 Copy-Item "C:\Users\robin\Documents\Sanboxdatacenter\*.zip" .
@@ -23,7 +32,7 @@ python check_memory_stats.py
 python ACTIVATE_MEMORY.py
 ```
 
-### Option B: Clone from GitHub (Code Only)
+**Option B: Clone from GitHub (Code Only)**
 ```bash
 git clone https://github.com/robwestz/sandboxdatacenter.git
 cd sandboxdatacenter
@@ -31,7 +40,7 @@ python TEST_MEMORY.py        # Loads context from DB
 python ACTIVATE_MEMORY.py    # Creates new session checkpoint
 ```
 
-### Option C: Hybrid (Best Safety)
+**Option C: Hybrid (Best Safety)**
 ```bash
 # Combine both: Get ZIP from host, then pull latest code
 python SANDBOX_IMPORT.py     # Restores from ZIP
@@ -39,25 +48,29 @@ git pull origin master       # Gets latest changes
 python TEST_MEMORY.py        # Verify everything
 ```
 
+### STEP 3: Review Handoff & Continue
+
+The handoff from previous agent tells you:
+- ✓ What was accomplished
+- ⚠️ Issues encountered
+- ✓ Solutions applied
+- → Recommended next steps
+
 ---
 
-## Verifying You're Ready to Continue
+## The Living Handoff System (New in This Session!)
 
-**Run this to test if you have sufficient session knowledge:**
+**What's Different:** Instead of reading a static briefing, you read what the **previous agent just wrote** about the current state.
 
-```bash
-python verify_session_knowledge.py
-```
+Each session:
+1. New agent runs `python AGENT_HANDOFF_TEMPLATE.py` → sees previous work
+2. Agent works and learns
+3. Before shutdown: `python AGENT_HANDOFF_TEMPLATE.py --create` → writes handoff
+4. **Next agent inherits that knowledge automatically**
 
-Or read the architecture test:
-```bash
-cat CRITICAL_QUESTIONS.md
-```
+**Result:** True continuity. The briefing gets better with each agent because it's actually CURRENT.
 
-**Key Question to Ask New Agent:**
-> "Why does this system use THREE backup layers (Sandbox Export ZIP, GitHub, Host File-Sharing) instead of just using GitHub alone? What does each provide?"
-
-If agent can answer that well → ~95% knowledge acquired.
+Read more: `HANDOFF_SYSTEM_EXPLAINED.md`
 
 ---
 
@@ -65,7 +78,8 @@ If agent can answer that well → ~95% knowledge acquired.
 
 | File | What It Does | When to Use |
 |------|--------------|-------------|
-| `AGENT_BRIEFING.md` | Complete session summary + architecture | **Read first** |
+| `AGENT_HANDOFF_TEMPLATE.py` | See previous agent's handoff OR create new one | **First thing** on startup / **At session end** |
+| `AGENT_BRIEFING.md` | Complete session summary (static reference) | Read if handoff is unavailable |
 | `CRITICAL_QUESTIONS.md` | Verification questions for knowledge test | Self-test |
 | `verify_session_knowledge.py` | Interactive knowledge verification | After reading briefing |
 | `SANDBOX_EXPORT.py` | Create backup ZIP | **Before shutdown** |
@@ -77,13 +91,19 @@ If agent can answer that well → ~95% knowledge acquired.
 
 ## Critical Checklist
 
-### When Session Starts
-- [ ] Read `AGENT_BRIEFING.md` (5 min)
+### When Session Starts (MANDATORY)
+- [ ] Run `python AGENT_HANDOFF_TEMPLATE.py` (1 sec) - Read previous agent's summary
+- [ ] Read `AGENT_BRIEFING.md` if handoff unavailable (5 min)
 - [ ] Run `python TEST_MEMORY.py` (2 sec)
 - [ ] Run `python ACTIVATE_MEMORY.py` (1 sec)
 - [ ] Check memory stats: `python check_memory_stats.py` (1 sec)
 
 ### When Session Ends (MANDATORY)
+- [ ] Run `python AGENT_HANDOFF_TEMPLATE.py --create` (2 min) - Write handoff
+  - Document accomplishments
+  - Document issues & solutions
+  - Document next steps
+  - List warnings for next agent
 - [ ] Run `python AUTO_CHECKPOINT.py` (1 sec) - Save checkpoint
 - [ ] Run `python SANDBOX_EXPORT.py` (10 sec) - Create ZIP backup
 - [ ] Run `git add -A && git commit && git push` (30 sec) - Push changes
@@ -114,28 +134,30 @@ If agent can answer that well → ~95% knowledge acquired.
 
 ## FAQ for Next Session
 
-**Q: Where's my previous work?**
-A: In `MEMORY_CORE/central_memory.db` if you imported from ZIP. In git history if you cloned. Run `python TEST_MEMORY.py` to load it.
+**Q: How do I know what the previous agent did?**
+A: Run `python AGENT_HANDOFF_TEMPLATE.py` on startup. Shows accomplishments, issues, solutions, next steps.
 
-**Q: How do I know what I was working on?**
-A: Check `MEMORY_CORE/checkpoints/latest_checkpoint.json` or run `python check_memory_stats.py`
+**Q: Where is this handoff stored?**
+A: Both places:
+  - Database: `MEMORY_CORE/central_memory.db` (handoffs table)
+  - JSON backup: `MEMORY_CORE/agent_handoffs/handoff_*.json`
 
-**Q: What if the ZIP is missing?**
-A: Use `git clone ...` and you'll get all code. Memory DB might be stale (from last commit) but codebase is current.
+**Q: What if I'm the first agent?**
+A: No previous handoff will exist. Read `AGENT_BRIEFING.md` instead.
 
-**Q: What if GitHub is down?**
-A: Use SANDBOX_IMPORT.py with ZIP from Desktop. Full workspace preserved.
+**Q: How do I pass knowledge to the next agent?**
+A: Before shutdown, run: `python AGENT_HANDOFF_TEMPLATE.py --create`
+   Answer the prompts about what you did, issues, solutions, warnings.
 
-**Q: Do I need to read every file?**
-A: No. Read:
-  1. `AGENT_BRIEFING.md` (this session's summary)
-  2. `CRITICAL_QUESTIONS.md` (verify understanding)
-  3. Work from there. Reference docs as needed.
+**Q: Is this same as regular memory?**
+A: No. Handoffs are session-level summaries. Regular memory stores individual facts/patterns.
+   Together they form complete context.
 
-**Q: How much context do I lose?**
-A: ~0% if using SANDBOX_IMPORT.py (full restore)  
-   ~5% if using git clone (memory DB as of last commit)  
-   ~95% preserved with either method.
+**Q: What about my uncommitted work?**
+A: Commit it before creating handoff. Handoff captures the state AT shutdown.
+
+**Q: Can I create multiple handoffs per session?**
+A: Yes. Each one is timestamped. Only latest is read on startup, but all are preserved.
 
 ---
 
