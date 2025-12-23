@@ -119,7 +119,23 @@ class AgentHandoffManager:
     def print_agent_briefing(self):
         """Print current state briefing for new agent."""
         print("\n" + "="*70)
-        print("AGENT HANDOFF BRIEFING - Start Here!")
+        print("AGENT SESSION STARTUP - Required Reading Order")
+        print("="*70)
+        
+        print("\n[CRITICAL] Step 1: PROJECT VISION & CONSTITUTION")
+        print("-" * 70)
+        print("READ FIRST: PROJECT_CONSTITUTION.md")
+        print("\nThis document contains:")
+        print("  • Why this system exists (the vision)")
+        print("  • How the three-layer backup strategy works")
+        print("  • Rules you MUST follow (immutable)")
+        print("  • The Sacred Sequence (start → end)")
+        print("  • What never changes vs what can evolve")
+        print("\nEstimated read time: 5 minutes")
+        print("→ This gives you the foundation\n")
+        
+        print("="*70)
+        print("Step 2: PREVIOUS AGENT'S HANDOFF")
         print("="*70)
         
         handoff = self.get_latest_handoff()
@@ -127,7 +143,12 @@ class AgentHandoffManager:
         if not handoff:
             print("\n[INFO] No previous agent handoff found.")
             print("This appears to be the first session.")
-            print("Read AGENT_BRIEFING.md for system overview.")
+            print("\nYour startup sequence:")
+            print("  1. ✓ Read PROJECT_CONSTITUTION.md (just did)")
+            print("  2. Run: python TEST_MEMORY.py")
+            print("  3. Run: python ACTIVATE_MEMORY.py")
+            print("  4. Run: python check_memory_stats.py")
+            print("\nYou're the first agent - exciting!")
             return
         
         print(f"\nPrevious Agent Session:")
@@ -168,7 +189,13 @@ class AgentHandoffManager:
                 print(f"    - {change}")
         
         print("\n" + "="*70)
-        print("Ready to continue? Run: python TEST_MEMORY.py")
+        print("Step 3: COMPLETE YOUR STARTUP SEQUENCE")
+        print("="*70)
+        print("\nNow run (in order):")
+        print("  python TEST_MEMORY.py")
+        print("  python ACTIVATE_MEMORY.py")
+        print("  python check_memory_stats.py")
+        print("\nThen you're ready to work!")
         print("="*70 + "\n")
 
 
